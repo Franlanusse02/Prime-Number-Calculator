@@ -1,0 +1,17 @@
+import math
+def is_prime(num):
+  if num < 2 or num == None:
+    return False
+  numsqrt = math.floor(math.sqrt(num))
+  for x in range(2,numsqrt+1):
+    if num%x == 0:
+      return False
+  return True
+user_language = input("Type your language. Escribe tu idioma. Language/Idioma: ")
+if user_language.title() == "English":
+  range_top = input("Type the highest number to find primes: ")
+elif user_language.title() == "Español":
+  range_top = input("Escribe el numero más alto que quieras usar: ")
+for i in range(int(range_top)):
+  if is_prime(i):
+    print(i)
